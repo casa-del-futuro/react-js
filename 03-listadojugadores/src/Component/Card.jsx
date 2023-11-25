@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Card = ({jugador}) => {
+const Card = ({jugador, id}) => {
     const {name,position, number} = jugador
     return (
-        <div class="e-card playing">
+        <Link to={"/player/"+id} >
+            <div class="e-card playing">
             <div class="image"></div>
 
             <div class="wave"></div>
@@ -15,7 +17,9 @@ const Card = ({jugador}) => {
                 <h2>{name}</h2>
                 <div class="name">{position}</div>
             </div>
-        </div>
+
+            </div>
+        </Link>
     )
 }
 export default Card

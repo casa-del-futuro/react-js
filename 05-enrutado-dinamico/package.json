@@ -1,5 +1,5 @@
 {
-  "name": "03-listadojugadores",
+  "name": "05-enrutado-dinamico",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

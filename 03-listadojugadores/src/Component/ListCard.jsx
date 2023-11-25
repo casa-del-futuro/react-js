@@ -59,7 +59,7 @@ const ListCard = () => {
     return (
         <>
             {list.map((jugador, index)=>{
-                return(<Card key={index} jugador={jugador} />)
+                return(<Card id={index} key={index} jugador={jugador} />)
             })}
         </>
     )
