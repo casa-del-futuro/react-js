@@ -2,6 +2,7 @@ import { useState } from "react";
 import Products from "./components/Products";
 import { products } from "./data/products";
 import Header from "./components/Header";
+import Filters from "./components/Filters";
 
 function App() {
 
@@ -26,7 +27,9 @@ function App() {
 
   return (
     <>
-      <Header setFilters={setFilters} />
+      <Header >
+        <Filters setFilters={setFilters} />
+      </Header>
       <Products products={filteredProduct} />
     </>
   );
