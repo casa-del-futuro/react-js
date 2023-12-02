@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { FilterContext } from '../context/ContextFilter'
 
-const Filters = ({setFilters}) => {
+const Filters = () => {
 
-    //OJO CON ESTO 
-    const [minPrice, setMinPrice] = useState(0)
+    const {filters, setFilters} = useContext(FilterContext)
 
     const handleMinPrice = event => {
-        //OJO CON ESTOOO ACA TENEMOS DOS FUNTES DE LA VERDAD
-        setMinPrice(event.target.value)
         setFilters( (prevState) =>  ({...prevState, minPrice: event.target.value }) ) // la funcion que modifica el estado "set" recibe una funcion como parametro, el primer valor de las props es el estado anterior 
     }
 
@@ -25,10 +23,10 @@ const Filters = ({setFilters}) => {
             id="price" 
             min={0}
             max={50}
-            value={minPrice}
+            value={filters.minPrice}
             onChange={handleMinPrice}
             />
-            <span>{minPrice}</span>
+            <span>{filters.minPrice}</span>
         </div>
         <div>
             <label htmlFor="category">Categoria</label>
